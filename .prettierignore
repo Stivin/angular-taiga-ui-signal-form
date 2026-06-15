@@ -1,0 +1,7 @@
+/.angular
+/.idea
+/dist
+/tmp
+/node-modules
+/coverage
+package-lock.json
