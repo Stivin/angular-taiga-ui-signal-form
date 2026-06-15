@@ -1,3 +1,101 @@
-<tui-root>
-  <router-outlet />
-</tui-root>
+<div tuiCardLarge>
+  <form tuiForm>
+    <header tuiHeader>
+      <h3 tuiTitle>
+        Form
+        <span tuiSubtitle>Signal Form</span>
+      </h3>
+    </header>
+
+    <tui-textfield>
+      <label tuiLabel>String</label>
+      <input tuiInput [formField]="form.string" />
+    </tui-textfield>
+
+    <!--    <tui-textfield>-->
+    <!--      <label tuiLabel>Textarea</label>-->
+    <!--      <textarea tuiTextarea [min]="4" [max]="4" [formField]="form.textarea"></textarea>-->
+    <!--    </tui-textfield>-->
+
+    <!--    <tui-textfield>-->
+    <!--      <label tuiLabel>Number</label>-->
+    <!--      <input tuiInputNumber [formField]="form.number" />-->
+    <!--    </tui-textfield>-->
+
+    <!--    <tui-textfield>-->
+    <!--      <label tuiLabel>String</label>-->
+    <!--      <input tuiInputDate [formField]="form.date" />-->
+    <!--      <tui-calendar *tuiDropdown />-->
+    <!--    </tui-textfield>-->
+
+    <!--    <tui-textfield>-->
+    <!--      <label tuiLabel>Phone</label>-->
+    <!--      <input tuiInputPhone mask="+7 ### ###-##-##" [formField]="form.phone" />-->
+    <!--    </tui-textfield>-->
+
+    <!--    <tui-textfield tuiChevron>-->
+    <!--      <label tuiLabel>Select</label>-->
+    <!--      <input tuiSelect [formField]="form.select" />-->
+    <!--      <tui-data-list-wrapper *tuiDropdown [items]="items" />-->
+    <!--    </tui-textfield>-->
+
+    <!--    <tui-textfield tuiChevron>-->
+    <!--      <label tuiLabel>ComboBox</label>-->
+    <!--      <input tuiComboBox [formField]="form.comboBox" />-->
+    <!--      <tui-data-list-wrapper *tuiDropdown [items]="items | tuiFilterByInput" />-->
+    <!--    </tui-textfield>-->
+
+    <!--    <tui-textfield multi tuiChevron>-->
+    <!--      <label tuiLabel>Chips</label>-->
+    <!--      <input tuiInputChip tuiSelectLike [formField]="form.chips" />-->
+    <!--      <tui-data-list-wrapper *tuiDropdown tuiMultiSelectGroup [items]="items" />-->
+    <!--    </tui-textfield>-->
+
+    <!--    <tui-textfield>-->
+    <!--      <label tuiLabel>Slider</label>-->
+    <!--      <input tuiInputSlider [max]="3000000" [min]="50000" [formField]="form.slider" />-->
+    <!--      <div class="ticks-labels">-->
+    <!--        <span>from 50 000 ₽</span>-->
+    <!--        <span>to 3 000 000 ₽</span>-->
+    <!--      </div>-->
+    <!--    </tui-textfield>-->
+
+    <!--    <label tuiInputFiles>-->
+    <!--      <input tuiInputFiles accept="image/*" [formField]="form.file" />-->
+    <!--    </label>-->
+
+    <div tuiGroup [collapsed]="true">
+      <label tuiBlock>
+        Option 1
+        <input tuiRadio type="radio" value="option-1" [formField]="form.radio" [style.margin-inline-start]="'auto'" />
+      </label>
+      <label tuiBlock>
+        Option 2
+        <input tuiRadio type="radio" value="option-2" [formField]="form.radio" [style.margin-inline-start]="'auto'" />
+      </label>
+    </div>
+
+    <label tuiLabel>
+      <input tuiSwitch type="checkbox" [formField]="form.switch" />
+      Switch
+    </label>
+
+    <label tuiLabel>
+      <input tuiCheckbox type="checkbox" [formField]="form.firstCheck" />
+      First Check
+    </label>
+    <label tuiLabel>
+      <input tuiCheckbox type="checkbox" [formField]="form.secondCheck" />
+      Second Check
+    </label>
+
+    <footer>
+      <button type="submit" tuiButton>Submit</button>
+      <button type="button" tuiButton>Reset</button>
+    </footer>
+  </form>
+</div>
+
+<div tuiCardLarge>
+  <pre>{{ form().value() | json }}</pre>
+</div>
