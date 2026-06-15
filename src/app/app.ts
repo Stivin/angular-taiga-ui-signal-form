@@ -10,7 +10,7 @@ import {
   TuiSelectLike,
   TuiTitle,
 } from '@taiga-ui/core';
-import { form, FormField, required } from '@angular/forms/signals';
+import { form, FormField, minLength, required } from '@angular/forms/signals';
 import {
   TuiBlock,
   TuiChevron,
@@ -19,9 +19,11 @@ import {
   TuiFileLike,
   TuiFiles,
   TuiInputChip,
+  TuiInputColor,
   TuiInputDate,
   TuiInputNumber,
   TuiInputPhone,
+  TuiInputPin,
   TuiInputSlider,
   TuiMultiSelect,
   TuiSelect,
@@ -60,6 +62,8 @@ import { JsonPipe } from '@angular/common';
     TuiInputSlider,
     TuiComboBox,
     TuiFilterByInputPipe,
+    TuiInputPin,
+    TuiInputColor,
   ],
   templateUrl: './app.html',
   styleUrl: './app.less',
@@ -79,6 +83,8 @@ export class App {
       chips: [] as string[],
       slider: 50_000,
       file: null as TuiFileLike | null,
+      pin: '',
+      color: '',
       radio: 'option-1',
       switch: false,
       firstCheck: true,
@@ -94,6 +100,7 @@ export class App {
       required(path.comboBox);
       required(path.chips);
       required(path.file);
+      minLength(path.pin, 4);
     },
   );
 }
