@@ -1,5 +1,5 @@
 <div tuiCardLarge>
-  <form tuiForm>
+  <form tuiForm [formRoot]="form">
     <header tuiHeader>
       <h3 tuiTitle>
         Form
@@ -99,8 +99,8 @@
     </label>
 
     <footer>
-      <button type="submit" tuiButton>Submit</button>
-      <button type="button" tuiButton>Reset</button>
+      <button type="submit" tuiButton [loading]="form().submitting()">Submit</button>
+      <button type="button" tuiButton (click)="resetForm()">Reset</button>
     </footer>
   </form>
 </div>
