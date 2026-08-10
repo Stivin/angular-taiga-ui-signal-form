@@ -66,6 +66,9 @@
         },
         "serve": {
           "builder": "@angular/build:dev-server",
+          "options": {
+            "port": 8083
+          },
           "configurations": {
             "production": {
               "buildTarget": "angular-taiga-ui-signal-form:build:production"
