@@ -11,7 +11,7 @@ import {
   TuiSelectLike,
   TuiTitle,
 } from '@taiga-ui/core';
-import { disabled, form, FormField, FormRoot, required } from '@angular/forms/signals';
+import { disabled, form, FormField, FormRoot, minLength, required } from '@angular/forms/signals';
 import {
   TuiBlock,
   TuiButtonLoading,
@@ -123,12 +123,14 @@ export class App {
       // required(root.textarea);
       // required(root.number);
       // required(root.date);
-      // required(root.phone);
-      // required(root.select);
-      // required(root.comboBox);
-      // required(root.chips);
-      // required(root.file);
-      // minLength(root.pin, 4);
+      required(root.phone);
+      required(root.select);
+      required(root.comboBox);
+      required(root.chips);
+      required(root.file);
+      required(root.pin);
+      required(root.color);
+      minLength(root.pin, 4);
     },
     {
       submission: {
@@ -145,5 +147,9 @@ export class App {
 
   protected resetForm(): void {
     this.form().reset({ ...INITIAL_MODEL });
+  }
+
+  protected removeFile(): void {
+    this.form.file().value.set(null);
   }
 }

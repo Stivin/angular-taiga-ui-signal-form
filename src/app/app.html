@@ -29,28 +29,32 @@
     <!--      <tui-calendar *tuiDropdown />-->
     <!--    </tui-textfield>-->
 
-    <!--    <tui-textfield>-->
-    <!--      <label tuiLabel>Phone</label>-->
-    <!--      <input tuiInputPhone mask="+7 ### ###-##-##" [formField]="form.phone" />-->
-    <!--    </tui-textfield>-->
+    <tui-textfield>
+      <label tuiLabel>Phone</label>
+      <input tuiInputPhone mask="+7 ### ###-##-##" [formField]="form.phone" />
+    </tui-textfield>
+    <tui-error [formField]="form.phone" />
 
-    <!--    <tui-textfield tuiChevron>-->
-    <!--      <label tuiLabel>Select</label>-->
-    <!--      <input tuiSelect [formField]="form.select" />-->
-    <!--      <tui-data-list-wrapper *tuiDropdown [items]="items" />-->
-    <!--    </tui-textfield>-->
+    <tui-textfield tuiChevron>
+      <label tuiLabel>Select</label>
+      <input tuiSelect [formField]="form.select" />
+      <tui-data-list-wrapper *tuiDropdown [items]="items" />
+    </tui-textfield>
+    <tui-error [formField]="form.select" />
 
-    <!--    <tui-textfield tuiChevron>-->
-    <!--      <label tuiLabel>ComboBox</label>-->
-    <!--      <input tuiComboBox [formField]="form.comboBox" />-->
-    <!--      <tui-data-list-wrapper *tuiDropdown [items]="items | tuiFilterByInput" />-->
-    <!--    </tui-textfield>-->
+    <tui-textfield tuiChevron>
+      <label tuiLabel>ComboBox</label>
+      <input tuiComboBox [formField]="form.comboBox" />
+      <tui-data-list-wrapper *tuiDropdown [items]="items | tuiFilterByInput" />
+    </tui-textfield>
+    <tui-error [formField]="form.comboBox" />
 
-    <!--    <tui-textfield multi tuiChevron>-->
-    <!--      <label tuiLabel>Chips</label>-->
-    <!--      <input tuiInputChip tuiSelectLike [formField]="form.chips" />-->
-    <!--      <tui-data-list-wrapper *tuiDropdown tuiMultiSelectGroup [items]="items" />-->
-    <!--    </tui-textfield>-->
+    <tui-textfield multi tuiChevron>
+      <label tuiLabel>Chips</label>
+      <input tuiInputChip tuiSelectLike [formField]="form.chips" />
+      <tui-data-list-wrapper *tuiDropdown tuiMultiSelectGroup [items]="items" />
+    </tui-textfield>
+    <tui-error [formField]="form.chips" />
 
     <!--    <tui-textfield>-->
     <!--      <label tuiLabel>Slider</label>-->
@@ -61,18 +65,27 @@
     <!--      </div>-->
     <!--    </tui-textfield>-->
 
-    <!--    <label tuiInputFiles>-->
-    <!--      <input tuiInputFiles accept="image/*" [formField]="form.file" />-->
-    <!--    </label>-->
+    @if (!form.file().value()) {
+      <label tuiInputFiles>
+        <input tuiInputFiles accept="image/*" [formField]="form.file" />
+      </label>
+    }
+    <tui-files>
+      @if (form.file().value(); as file) {
+        <tui-file [file]="file" (remove)="removeFile()" />
+      }
+    </tui-files>
 
     <tui-textfield>
       <input tuiInputPin [formField]="form.pin" />
     </tui-textfield>
+    <tui-error [formField]="form.pin" />
 
-    <!--    <tui-textfield>-->
-    <!--      <label tuiLabel>Color</label>-->
-    <!--      <input tuiInputColor [formField]="form.color" />-->
-    <!--    </tui-textfield>-->
+    <tui-textfield>
+      <label tuiLabel>Color</label>
+      <input tuiInputColor [formField]="form.color" />
+    </tui-textfield>
+    <tui-error [formField]="form.color" />
 
     <div tuiGroup [collapsed]="true">
       <label tuiBlock>
