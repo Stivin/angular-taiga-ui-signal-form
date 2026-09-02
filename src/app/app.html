@@ -17,17 +17,62 @@
     <!--      <label tuiLabel>Textarea</label>-->
     <!--      <textarea tuiTextarea [min]="4" [max]="4" [formField]="form.textarea"></textarea>-->
     <!--    </tui-textfield>-->
+    <!--    <tui-error [formField]="form.textarea" />-->
 
     <!--    <tui-textfield>-->
     <!--      <label tuiLabel>Number</label>-->
-    <!--      <input tuiInputNumber [formField]="form.number" />-->
+    <!--      <input tuiInputNumber [min]="10" [max]="1000" [formField]="form.number" />-->
     <!--    </tui-textfield>-->
+    <!--    <tui-error [formField]="form.number" />-->
 
     <!--    <tui-textfield>-->
-    <!--      <label tuiLabel>String</label>-->
+    <!--      <label tuiLabel>Date</label>-->
     <!--      <input tuiInputDate [formField]="form.date" />-->
     <!--      <tui-calendar *tuiDropdown />-->
     <!--    </tui-textfield>-->
+    <!--    <tui-error [formField]="form.date" />-->
+
+    <!--    <tui-textfield>-->
+    <!--      <label tuiLabel>Date multi</label>-->
+    <!--      <input tuiInputDateMulti [formField]="form.dateMulti" />-->
+    <!--      <tui-calendar *tuiDropdown />-->
+    <!--      <tui-input-chip *tuiItem />-->
+    <!--    </tui-textfield>-->
+    <!--    <tui-error [formField]="form.dateMulti" />-->
+
+    <!--    <tui-textfield>-->
+    <!--      <label tuiLabel>Date range</label>-->
+    <!--      <input tuiInputDateRange [formField]="form.dateRange" />-->
+    <!--      <tui-calendar-range *tuiDropdown />-->
+    <!--    </tui-textfield>-->
+    <!--    <tui-error [formField]="form.dateRange" />-->
+
+    <!--    <tui-textfield>-->
+    <!--      <label tuiLabel>Date time</label>-->
+    <!--      <input tuiInputDateTime [formField]="form.dateTime" />-->
+    <!--      <tui-calendar *tuiDropdown />-->
+    <!--    </tui-textfield>-->
+    <!--    <tui-error [formField]="form.dateTime" />-->
+
+    <tui-textfield>
+      <label tuiLabel>Month</label>
+      <input tuiInputMonth [formField]="form.month" />
+      <tui-calendar-month *tuiDropdown />
+    </tui-textfield>
+    <tui-error [formField]="form.month" />
+
+    <!--    <tui-textfield>-->
+    <!--      <label tuiLabel>Year</label>-->
+    <!--      <input tuiInputYear [formField]="form.year" />-->
+    <!--      <tui-calendar-year *tuiDropdown />-->
+    <!--    </tui-textfield>-->
+    <!--    <tui-error [formField]="form.year" />-->
+
+    <tui-textfield>
+      <label tuiLabel>Time</label>
+      <input tuiInputTime [formField]="form.time" />
+    </tui-textfield>
+    <tui-error [formField]="form.time" />
 
     <tui-textfield>
       <label tuiLabel>Phone</label>
@@ -86,6 +131,28 @@
       <input tuiInputColor [formField]="form.color" />
     </tui-textfield>
     <tui-error [formField]="form.color" />
+
+    <tui-textfield>
+      <label tuiLabel>Card</label>
+      <input tuiInputCard [formField]="form.card" />
+    </tui-textfield>
+    <tui-error [formField]="form.card" />
+
+    <tui-textfield>
+      <label tuiLabel>Expire</label>
+      <input tuiInputExpire [formField]="form.expire" />
+    </tui-textfield>
+    <tui-error [formField]="form.expire" />
+
+    <tui-textfield>
+      <label tuiLabel>CVC</label>
+      <input tuiInputCVC [formField]="form.cvc" />
+    </tui-textfield>
+    <tui-error [formField]="form.cvc" />
+
+    <tui-input-inline>
+      <input [formField]="form.inline" />
+    </tui-input-inline>
 
     <div tuiGroup [collapsed]="true">
       <label tuiBlock>

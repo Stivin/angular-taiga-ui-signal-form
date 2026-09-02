@@ -23,23 +23,36 @@ import {
   TuiInputChip,
   TuiInputColor,
   TuiInputDate,
+  TuiInputDateRange,
+  TuiInputDateTime,
+  TuiInputInline,
+  TuiInputMonth,
   TuiInputNumber,
   TuiInputPhone,
   TuiInputPin,
   TuiInputSlider,
+  TuiInputTime,
+  TuiInputYear,
   TuiMultiSelect,
   TuiSelect,
   TuiSwitch,
   TuiTextarea,
 } from '@taiga-ui/kit';
 import { JsonPipe } from '@angular/common';
-import { TuiDay } from '@taiga-ui/cdk';
+import { TuiDay, TuiDayRange, TuiMonth, TuiTime } from '@taiga-ui/cdk';
+import { TuiInputCard } from '@taiga-ui/addon-commerce';
 
 interface FormModel {
   string: string;
   textarea: string;
   number: number | null;
   date: TuiDay | null;
+  dateMulti: TuiDay[];
+  dateRange: TuiDayRange;
+  dateTime: [TuiDay, TuiTime];
+  month: TuiMonth | null;
+  year: number | null;
+  time: TuiTime | null;
   phone: string;
   select: string | null;
   comboBox: string | null;
@@ -48,6 +61,10 @@ interface FormModel {
   file: TuiFileLike | null;
   pin: string;
   color: string;
+  card: string;
+  expire: string;
+  cvc: string;
+  inline: string;
   radio: 'option-1' | 'option-2';
   switch: boolean;
   firstCheck: boolean;
@@ -59,6 +76,12 @@ const INITIAL_MODEL: FormModel = {
   textarea: '',
   number: null,
   date: null,
+  dateMulti: [new TuiDay(2025, 6, 6)],
+  dateRange: new TuiDayRange(new TuiDay(2017, 0, 15), new TuiDay(2017, 0, 20)),
+  dateTime: [new TuiDay(2020, 8, 20), new TuiTime(19, 19)],
+  month: null,
+  year: null,
+  time: null,
   phone: '',
   select: null,
   comboBox: null,
@@ -67,6 +90,10 @@ const INITIAL_MODEL: FormModel = {
   file: null,
   pin: '',
   color: '',
+  card: '',
+  expire: '',
+  cvc: '',
+  inline: 'hello',
   radio: 'option-1',
   switch: false,
   firstCheck: true,
@@ -108,6 +135,13 @@ const INITIAL_MODEL: FormModel = {
     TuiInputColor,
     TuiButtonLoading,
     TuiError,
+    TuiInputCard,
+    TuiInputDateRange,
+    TuiInputDateTime,
+    TuiInputMonth,
+    TuiInputYear,
+    TuiInputTime,
+    TuiInputInline,
   ],
   templateUrl: './app.html',
   styleUrl: './app.less',
@@ -123,6 +157,12 @@ export class App {
       // required(root.textarea);
       // required(root.number);
       // required(root.date);
+      // required(root.dateMulti);
+      // required(root.dateRange);
+      // required(root.dateTime);
+      required(root.month);
+      // required(root.year);
+      required(root.time);
       required(root.phone);
       required(root.select);
       required(root.comboBox);
@@ -130,6 +170,9 @@ export class App {
       required(root.file);
       required(root.pin);
       required(root.color);
+      required(root.card);
+      required(root.expire);
+      required(root.cvc);
       minLength(root.pin, 4);
     },
     {
