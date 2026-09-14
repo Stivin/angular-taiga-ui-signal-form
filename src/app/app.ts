@@ -64,7 +64,7 @@ interface FormModel {
   month: TuiMonth | null;
   year: number | null;
   dateMulti: TuiDay[];
-  dateRange: TuiDayRange;
+  dateRange: TuiDayRange | null;
   // Phones
   phone: string;
   phoneInternational: string;
@@ -110,7 +110,7 @@ const INITIAL_MODEL: FormModel = {
   month: null,
   year: null,
   dateMulti: [new TuiDay(2025, 6, 6)],
-  dateRange: new TuiDayRange(new TuiDay(2017, 0, 15), new TuiDay(2017, 0, 20)),
+  dateRange: null,
   // Phones
   phone: '',
   phoneInternational: '',
@@ -212,15 +212,15 @@ export class App {
       // Selects
       required(root.select);
       required(root.comboBox);
-      required(root.chips);
+      minLength(root.chips, 1);
       // Dates
       required(root.date);
       required(root.time);
       required(root.dateTime);
       required(root.month);
       required(root.year);
-      // required(root.dateMulti);
-      // required(root.dateRange);
+      minLength(root.dateMulti, 1);
+      required(root.dateRange);
       // Phones
       required(root.phone);
       required(root.phoneInternational);

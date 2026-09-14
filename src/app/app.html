@@ -85,22 +85,20 @@
     </tui-textfield>
     <tui-error [formField]="form.year" />
 
-    <div tuiNotification appearance="warning"><strong>tuiInputDateMulti</strong> is not working</div>
-    <!--    <tui-textfield>-->
-    <!--      <label tuiLabel>Date multi</label>-->
-    <!--      <input tuiInputDateMulti [min]="dateMin" [max]="dateMax" [formField]="form.dateMulti" />-->
-    <!--      <tui-calendar *tuiDropdown />-->
-    <!--      <tui-input-chip *tuiItem />-->
-    <!--    </tui-textfield>-->
-    <!--    <tui-error [formField]="form.dateMulti" />-->
+    <tui-textfield multi>
+      <label tuiLabel>Date multi</label>
+      <input tuiInputDateMulti [min]="dateMin" [max]="dateMax" [formField]="form.dateMulti" />
+      <tui-calendar *tuiDropdown />
+      <tui-input-chip *tuiItem />
+    </tui-textfield>
+    <tui-error [formField]="form.dateMulti" />
 
-    <div tuiNotification appearance="warning"><strong>tuiInputDateRange</strong> is not working</div>
-    <!--    <tui-textfield>-->
-    <!--      <label tuiLabel>Date range</label>-->
-    <!--      <input tuiInputDateRange [min]="dateMin" [max]="dateMax" [formField]="form.dateRange" />-->
-    <!--      <tui-calendar-range *tuiDropdown />-->
-    <!--    </tui-textfield>-->
-    <!--    <tui-error [formField]="form.dateRange" />-->
+    <tui-textfield>
+      <label tuiLabel>Date range</label>
+      <input tuiInputDateRange [min]="dateMin" [max]="dateMax" [formField]="form.dateRange" />
+      <tui-calendar-range *tuiDropdown />
+    </tui-textfield>
+    <tui-error [formField]="form.dateRange" />
 
     <tui-textfield>
       <label tuiLabel>Phone</label>
@@ -181,10 +179,9 @@
 
     <h3>Sliders</h3>
 
-    <div tuiNotification appearance="warning"><strong>tuiInputRange</strong> is not working</div>
-    <!--    <tui-input-range [max]="1000000" [min]="0" [formField]="form.inputSliderRange">-->
-    <!--      Input slider range-->
-    <!--    </tui-input-range>-->
+    <tui-input-range [max]="1000000" [min]="0" [formField]="form.inputSliderRange">
+      Input slider range
+    </tui-input-range>
 
     <tui-textfield>
       <label tuiLabel>Input slider</label>
@@ -192,8 +189,7 @@
       <input tuiSlider type="range" />
     </tui-textfield>
 
-    <div tuiNotification appearance="warning"><strong>tuiRange</strong> is not working</div>
-    <!--    <tui-range [min]="10" [max]="100" [formField]="form.sliderRange" />-->
+    <tui-range [min]="10" [max]="100" [formField]="form.sliderRange" />
 
     <div tuiNotification appearance="warning"><strong>tuiSlider</strong> is not working</div>
     <!--    <input tuiSlider type="range" [min]="10" [max]="100" [step]="10" [formField]="form.slider" />-->
